@@ -1,5 +1,5 @@
 FROM node:lts-hydrogen
-RUN "git clone https://github.com/Homework-Depo/DSN_Laboratorio_04"
+RUN git clone https://github.com/Homework-Depo/DSN_Laboratorio_04
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
