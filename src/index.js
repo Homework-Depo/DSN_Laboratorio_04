@@ -1,9 +1,16 @@
 const express = require('express')
+const eta = require('eta')
 const app = express()
-const PORT = 3000
+const PORT = 9000
+
+app.engine("eta", eta.renderFile)
+eta.configure({ views: "./src/views", cache: true })
+app.set("views", "./src/views")
+app.set("view cache", true)
+app.set("view engine", "eta")
 
 app.get('/', (req, res) => {
-  res.send('Hola')
+  res.render('index')
 })
 
 app.listen(PORT, () => {
